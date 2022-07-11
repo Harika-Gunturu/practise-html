@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>fetch API post example</title>
+    </head>
+    <body>
+        <form id="form" method="post">
+            <input type="text" id="name" placeholder="name"/>
+            <input type="text" id="body" placeholder="body"/>
+
+            <input type="submit"  value="add todo"/>
+        </form>
+    </body>
+    <script>
+        var form = document.getElementById('form')
+       form.addEventListener('submit',function(e){
+        e.preventDefault()
+           var name = document.getElementById('name').value
+           var body = document.getElementById('body').value
+       fetch("https://jsonplaceholder.typicode.com/posts",{
+        method:'post',
+        body:JSON.stringify({
+            title:name,
+            body:body,
+        }),
+        headers:{
+            "content-Type":"application/json;charset=UTF-8"
+        }
+    })
+    .then(function(response){
+        return response.json()
+    })
+    .then(function(data){
+        console.log(data)
+        var results = document.getElementById('results')
+
+        results.innerHTML = <p>the title of the todo is ${data.title}</p>
+    })
+
+})
+
+</script>
+</html>
