@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>css-onclclick</title>
+        <style>
+            .box{
+                color:red;
+            }
+        </style>
+    </head>
+    <body>
+        <h2> Different coloured -text when u click on text boxes</h2>
+            <div class="box">
+                coloured text!!!
+            </div>
+                <button onclick="textcolor('blue')">Blue</button>
+                <button onclick="textcolor('green')">Green</button>
+                <button onclick="textcolor('cyan')">cyan</button>
+                <script>
+                    function textcolor(color){
+                        document.querySelector('.box').style.color=color;
+                    }
+                    
+                </script>
+                
+    </body>
+</html>

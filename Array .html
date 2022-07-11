@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title> Array psuh,loop,Render</title>
+    </head>
+    <body>
+        <h1>flower power!!!!</h1>
+        <input type="text" id="flowerInput">
+        <button onclick="addFlower()">Add Flower</button>
+        <ul id="flowerList">
+            <li>Cool flower</li>
+        </ul>
+        <script>
+            const flowers = [];
+            const flowerInput = document.getElementById('flowerInput');
+            const flowerList = document.getElementById('flowerList');
+
+            function addFlower(){
+                const flower = flowerInput.value;
+                flowers.push(flower);
+                flowerList.innerHTML = '';
+                flowers.forEach((_flower) => {
+                    console.log(_flower)
+                    const li =document.createElement("li");
+                    li.appendChild(document.createTextNode(_flower));
+                    flowerList.appendChild(li);               
+            })
+        }
+      </script>
+     </body>
+</html>

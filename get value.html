@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title> html</title>
+    </head>
+    <body>
+        <h1 id="a">   </h1>
+        
+        <script>
+       function call(){
+        console.log('hello')
+       }
+       call();
+        </script>
+        <script>
+            function caller(){
+                document.getElementById("a").innerHTML= document.getElementById('user').value;
+            }
+        </script>
+       
+        <input type="text" id="user" placeholder="entername">
+        <input type="button" value="submit" onclick="caller()">
+        </body>
+</html>
